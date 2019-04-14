@@ -3,7 +3,18 @@
 # Первыми элементами ряда считать цифры 1 1
 
 def fibonacci(n, m):
-    pass
+    a, b = 1, 1
+    lst = [1, ]
+    for i in range(m):
+        a, b = b, a + b
+        lst.append(a)
+
+    return lst[n - 1:m]
+
+
+print(fibonacci(1,3))
+
+output: [1, 1, 2]
 
 # Задача-2:
 # Напишите функцию, сортирующую принимаемый список по возрастанию.
