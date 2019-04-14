@@ -4,9 +4,11 @@
 # Округление должно происходить по математическим правилам (0.6 --> 1, 0.4 --> 0).
 # Для решения задачи не используйте встроенные функции и функции из модуля math.
 
-def my_round(number, ndigits):
-    pass
 
+def my_round(number, ndigits):
+    number = number * (10 ** ndigits) + 0.41
+    number = number // 1
+    return number / (10 ** ndigits)
 
 print(my_round(2.1234567, 5))
 print(my_round(2.1999967, 5))
@@ -20,7 +22,14 @@ print(my_round(2.9999967, 5))
 # !!!P.S.: функция не должна НИЧЕГО print'ить
 
 def lucky_ticket(ticket_number):
-    pass
+    ticket=list(str(ticket_number))
+    if len(ticket)==6:
+        if int(ticket[0])+int(ticket[1])+int(ticket[2])==int(ticket[3])+int(ticket[4])+int(ticket[5]):
+            return "Happy"
+        else:
+            return "Unhappy"
+    else:
+        pass
 
 
 print(lucky_ticket(123006))
