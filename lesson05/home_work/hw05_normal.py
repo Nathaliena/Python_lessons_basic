@@ -13,3 +13,47 @@
 # Для решения данной задачи используйте алгоритмы из задания easy,
 # оформленные в виде соответствующих функций,
 # и импортированные в данный файл из easy.py
+
+#import os
+
+
+
+#def created(folder): #создать папку
+    #os.mkdir(folder)
+
+
+#def removed(folder): #удалить папку
+    #os.rmdir(folder)
+
+
+
+#def nowhere(): #показать содержимое папки
+    #os.getcwdb()
+
+#def change(folder):
+    #os.chdir(folder)
+
+from hw05_easy import created,removed,os,nowhere,change
+
+print("Ваша текущая директория= ", os.getcwd())
+menu = 0
+
+while(menu < 1 or menu > 4):
+    menu = int(input('Выберите один из пунктов\n1. Перейти в папку\n2. Просмотреть содержимое текущей папки\n3. Удалить папку\n4. Создать папку\nВаш выбор: '))
+    if (menu < 1 or menu > 4):
+        print('Попробуйте снова')
+print('Ваша текущая директория= ',(os.getcwd()))
+if menu == 1:
+    folder = str(input('В какую папку вы хотите перейти: '))
+    change(folder)
+elif menu == 2:
+    nowhere()
+elif menu == 3:
+    folder = str(input('Какую папку вы хотите удалить: '))
+    removed(folder)
+elif menu == 4:
+    folder = str(input('Какую папку вы хотите создать: '))
+    created(folder)
+else:
+    print('Успешно создано/удалено/перешел')
+print('Ваша текущая директория= ',(os.getcwd()))
